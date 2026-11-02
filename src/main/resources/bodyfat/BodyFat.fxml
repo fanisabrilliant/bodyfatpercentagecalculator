@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bodyfat.BodyFatController">
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+   <children>
+      <Label text="Kalkulator Persentase Lemak Tubuh">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+
+      <GridPane hgap="10.0" vgap="8.0">
+         <children>
+            <Label text="Usia" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="tfUsia" prefWidth="110.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Label text="umur: 18 - 79" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+
+            <Label text="Jenis Kelamin" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <HBox spacing="12.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+               <children>
+                  <RadioButton fx:id="rbLaki" mnemonicParsing="false" text="Laki-laki">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="tgGender" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="rbPerempuan" mnemonicParsing="false" text="Perempuan" toggleGroup="$tgGender" />
+               </children>
+            </HBox>
+
+            <Label text="Tinggi" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField fx:id="tfTinggi" prefWidth="110.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="cm" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+
+            <Label text="Berat" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <TextField fx:id="tfBerat" prefWidth="110.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="kg" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+
+            <Label text="Pinggang" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <TextField fx:id="tfPinggang" prefWidth="110.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="cm (opsional)" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+
+            <Label text="Leher" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <TextField fx:id="tfLeher" prefWidth="110.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="cm (opsional)" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+
+            <Label text="Pinggul" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+            <TextField fx:id="tfPinggul" prefWidth="110.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="cm (opsional, wanita)" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+         </children>
+      </GridPane>
+
+      <HBox spacing="10.0">
+         <children>
+            <Button defaultButton="true" mnemonicParsing="false" onAction="#hitung" text="Hitung" />
+            <Button mnemonicParsing="false" onAction="#reset" text="Hapus" />
+         </children>
+      </HBox>
+
+      <Label fx:id="lblError" />
+
+      <Separator />
+
+      <GridPane hgap="10.0" vgap="6.0">
+         <children>
+            <Label text="Body Fat" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Label fx:id="lblBodyFat" text="-" GridPane.columnIndex="1" GridPane.rowIndex="0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+
+            <Label text="Kategori" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label fx:id="lblKategori" text="-" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="BMI" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Label fx:id="lblBmi" text="-" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <Label text="Massa" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Label fx:id="lblMassa" text="-" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+
+      <Label fx:id="lblCatatan" />
+   </children>
+</VBox>
